@@ -1,10 +1,11 @@
-import './App.css';
-import VideoPlayer from './components/VideoPlayer';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
+import VideoFeedback from "./pages/VideoFeedback";
 
 function App() {
   return (
-    <div className="App">
-      <VideoPlayer />
+    <div>
+      <VideoFeedback />
     </div>
   );
 }
