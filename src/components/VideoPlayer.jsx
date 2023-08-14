@@ -27,6 +27,7 @@ const VideoPlayer = () => {
         width="100%" // Set the width to 100% to make it responsive
         height="100%" // Set the height to 100% to make it responsive
         controls
+        playing
       />
     </div>
   );

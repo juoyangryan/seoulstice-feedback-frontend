@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import VideoPlayer from "../components/VideoPlayer";
 import FeedbackDetail from "../features/feedbackDetail";
 import FeedbackMembers from "../components/FeedbackMembers";
@@ -6,6 +6,8 @@ import FeedbackList from "../features/feedbackList";
 import { SeekVideoProvider } from "../context/SeekVideoContext";
 
 const VideoFeedback = () => {
+  const [selectedFeedback, setSelectedFeedback] = useState(null);
+
   return (
     <SeekVideoProvider>
       <div className="container-fluid">
@@ -15,7 +17,9 @@ const VideoFeedback = () => {
               <VideoPlayer />
             </div>
             <div className="row">
-              <FeedbackDetail />
+              {selectedFeedback && (
+                <FeedbackDetail selectedFeedback={selectedFeedback} />
+              )}
             </div>
           </div>
           <div className="col">
@@ -23,7 +27,10 @@ const VideoFeedback = () => {
               <FeedbackMembers />
             </div>
             <div className="row border">
-              <FeedbackList />
+              <FeedbackList
+                selectedFeedback={selectedFeedback}
+                setSelectedFeedback={setSelectedFeedback}
+              />
             </div>
           </div>
         </div>
