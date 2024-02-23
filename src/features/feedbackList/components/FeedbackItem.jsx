@@ -8,6 +8,7 @@ const FeedbackItem = ({
   timeEnd,
   selectedFeedback,
   setSelectedFeedback,
+  item,
 }) => {
   const { handleSeekTo } = useSeekVideo(); // Use the context hook
 
@@ -15,14 +16,16 @@ const FeedbackItem = ({
     if (handleSeekTo) {
       handleSeekTo(timeToSeconds(timeStart));
     }
-    setSelectedFeedback(id);
+    setSelectedFeedback(item);
   };
 
   return (
     <button
       type="button"
       className={`list-group-item list-group-item-action${
-        selectedFeedback === id ? " active" : ""
+        selectedFeedback && selectedFeedback.feedbackTitle === id
+          ? " active"
+          : ""
       }`}
       onClick={() => handleClick()}
     >

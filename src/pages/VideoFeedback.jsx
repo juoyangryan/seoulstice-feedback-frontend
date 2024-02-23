@@ -4,6 +4,7 @@ import FeedbackDetail from "../features/feedbackDetail";
 import FeedbackMembers from "../components/FeedbackMembers";
 import FeedbackList from "../features/feedbackList";
 import { SeekVideoProvider } from "../context/SeekVideoContext";
+import { FetchedInfo } from "./FetchedInfo";
 
 const VideoFeedback = () => {
   const [selectedFeedback, setSelectedFeedback] = useState(null);
@@ -30,6 +31,7 @@ const VideoFeedback = () => {
               <FeedbackList
                 selectedFeedback={selectedFeedback}
                 setSelectedFeedback={setSelectedFeedback}
+                fetchedInfo={FetchedInfo}
               />
             </div>
           </div>
